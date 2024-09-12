@@ -1,11 +1,11 @@
 resource "azurerm_virtual_machine" "vm1" {
-  name                  = "testetstetestvm"
+  name                  = "test-vm01"
   resource_group_name   = "TerraformRG"
   location              = "East US"
   network_interface_ids = [azurerm_network_interface.nic1.id]
   vm_size               = "Standard_DS1_v2"
   storage_os_disk {
-    name = "vishnudisk1"
+    name = "disk01"
     caching = "ReadWrite"
     managed_disk_type = "Standard_LRS"
     create_option = "FromImage"
@@ -37,7 +37,7 @@ resource "azurerm_virtual_machine" "vm1" {
 }
 
 resource "azurerm_virtual_network" "vnet1" {
-  name                = "testetstetest"
+  name                = "testvnet1"
   address_space       = ["10.0.0.0/16"]
   location            = "East US"
   resource_group_name = "TerraformRG"
@@ -52,7 +52,7 @@ resource "azurerm_subnet" "subnet1" {
 }
 
 resource "azurerm_network_interface" "nic1" {
-  name                = "vishnunic111"
+  name                = "testnic111"
   location            = "East US"
   resource_group_name = "TerraformRG"
 
